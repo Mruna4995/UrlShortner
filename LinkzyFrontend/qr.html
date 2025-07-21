@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linkzy | QR Code</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f4f4f4;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    #qrcode {
+      margin-top: 30px;
+    }
+    #downloadBtn {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Linkzy QR Code Generator</h2>
+  <p>Generate a QR Code for any link</p>
+
+  <input type="text" id="urlInput" placeholder="Enter or auto-filled URL" />
+  <button onclick="generateQRCode()">Generate</button>
+
+  <div id="qrcode"></div>
+
+  <button id="downloadBtn" onclick="downloadQR()">Download QR Code</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+  <script>
+    let currentCanvas = null;
+
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    function generateQRCode() {
+      const url = document.getElementById("urlInput").value.trim();
+      const qrCodeDiv = document.getElementById("qrcode");
+      const downloadBtn = document.getElementById("downloadBtn");
+      qrCodeDiv.innerHTML = "";
+      downloadBtn.style.display = "none";
+      currentCanvas = null;
+
+      if (!url) {
+        alert("Please enter a valid URL");
+        return;
+      }
+
+      QRCode.toCanvas(url, { width: 200 }, function (error, canvas) {
+        if (error) {
+          console.error(error);
+          alert("Failed to generate QR Code");
+          return;
+        }
+        qrCodeDiv.appendChild(canvas);
+        currentCanvas = canvas;
+        downloadBtn.style.display = "inline-block";
+      });
+    }
+
+    function downloadQR() {
+      if (!currentCanvas) return;
+
+      const link = document.createElement('a');
+      link.download = 'linkzy-qr.png';
+      link.href = currentCanvas.toDataURL("image/png");
+      link.click();
+    }
+
+    window.onload = function () {
+      const autoUrl = getQueryParam("url");
+      if (autoUrl) {
+        document.getElementById("urlInput").value = autoUrl;
+        generateQRCode();
+      }
+    };
+  </script>
+
+</body>
+</html>

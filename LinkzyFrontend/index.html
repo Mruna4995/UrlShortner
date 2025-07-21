@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linkzy - Shorten Your URL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Linkzy</div>
+    <ul class="nav-links">
+      <li><a href="qr.html">My URLs</a></li>
+      <li><a href="Plans.html">Plans</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="#" onclick="showForm('signup')">Signup</a></li>
+      <li><a href="#" onclick="showForm('signin')">Signin</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="shortener-box">
+      <h2>Shorten a long URL</h2>
+      <form id="shorten-form">
+        <input type="url" id="longUrl" placeholder="Enter long link here" required />
+        <label class="custom-label">Customize your link</label>
+        <div class="custom-link">
+          <span>linkzy.in/</span>
+          <input type="text" id="alias" placeholder="Enter alias (optional)" />
+        </div>
+        <button type="submit">Shorten URL</button>
+        <p id="successMsg" class="success-msg"></p>
+      </form>
+    </section>
+
+    <section class="info-box">
+      <h1>The Original URL Shortener</h1>
+      <p>Create shorter URLs with Linkzy.<br/>
+      Track analytics, use branded domains, and manage links with our premium tools.</p>
+      <div class="buttons">
+        <a href="plans.html">
+  <button class="outline">View Plans</button>
+</a>
+
+<li><a href="#" onclick="showForm('signup')">
+  <button class="solid">Create Free Account</button>
+</a>
+
+      </div>
+      <ul class="features">
+        <li>📈 Detailed Link Analytics</li>
+        <li>🔗 Fully Branded Domains</li>
+        <li>📤 Bulk Short URLs</li>
+        <li>⚙️ Link Management Features</li>
+      </ul>
+    </section>
+
+    <div id="formPanel" class="form-panel">
+      <div class="form-content" id="formContent"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

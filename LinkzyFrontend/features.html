@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linkzy | Features</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background: #111827;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .cta-section a {
+      text-decoration: none;
+      background: #3b82f6;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .cta-section a:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Explore Linkzy's Features</h1>
+    <p>Manage, share, and analyze your links with ease.</p>
+  </div>
+
+  <div class="features-container">
+
+    <div class="feature-card">
+      <div class="feature-title">🔗 Smart URL Shortening</div>
+      <div class="feature-desc">Create branded and customizable short links that look clean and professional.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">📊 Real-time Analytics</div>
+      <div class="feature-desc">Track link performance — clicks, countries, browsers, and referrers in real time.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">🧩 QR Code Generator</div>
+      <div class="feature-desc">Automatically generate scannable QR codes for any link you create.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">🔒 Link Expiry & Passwords</div>
+      <div class="feature-desc">Protect your links with expiry times or password access for security.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">💡 Link Management Dashboard</div>
+      <div class="feature-desc">Organize your links, filter by campaign, add tags, and export data.</div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-title">🌐 Custom Domains</div>
+      <div class="feature-desc">Use your own branded domain for better trust and recognition.</div>
+    </div>
+
+  </div>
+
+  <div class="cta-section">
+    <a href="pricing.html">View Plans</a>
+  </div>
+
+</body>
+</html>
